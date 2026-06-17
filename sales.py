@@ -103,7 +103,7 @@ def validate_env():
         "BC_PASSWORD_OR_ACCESS_KEY": BC_PASSWORD_OR_ACCESS_KEY,
     }
 
-    missing = [key for key, value in required_vars.items() if not value]
+    missing =[key for key, value in required_vars.items() if not value]
 
     if missing:
         print("\n[ERROR] Missing required environment variables:")
@@ -216,7 +216,7 @@ def fetch_all_records(url):
             # GET means fetch/read data only.
             response = session.get(
                 next_url,
-                verify=VERIFY_SSL,
+                verify=True,
             )
 
         except requests.exceptions.SSLError as error:
